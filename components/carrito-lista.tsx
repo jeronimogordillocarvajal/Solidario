@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cop } from "@/lib/format";
 import { useCart } from "./cart-provider";
 
@@ -17,9 +17,9 @@ export function CarritoLista() {
         <p className="mt-2 text-sm text-muted-foreground">
           Arma la reserva con varios emprendimientos. Cada uno entrega su propia boleta.
         </p>
-        <Button className="mt-4" render={<Link href="/" />}>
+        <Link href="/" className={buttonVariants({ className: "mt-4" })}>
           Ir a la tienda
-        </Button>
+        </Link>
       </div>
     );
   }
@@ -70,9 +70,9 @@ export function CarritoLista() {
       </ul>
       <p className="text-lg font-semibold">Total estimado {cop(total)}</p>
       <p className="text-xs text-muted-foreground">El precio final es el de la tienda al momento de reservar.</p>
-      <Button className="w-full" render={<Link href="/reservar" />}>
+      <Link href="/reservar" className={buttonVariants({ className: "w-full" })}>
         Continuar a la reserva
-      </Button>
+      </Link>
     </div>
   );
 }

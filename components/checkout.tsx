@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { reservar } from "@/lib/actions";
@@ -90,9 +90,9 @@ export function Checkout() {
     return (
       <div className="rounded-2xl bg-card p-6 text-center ring-1 ring-foreground/10">
         <p className="font-display text-3xl">El carrito está vacío</p>
-        <Button className="mt-4" render={<Link href="/" />}>
+        <Link href="/" className={buttonVariants({ className: "mt-4" })}>
           Ver emprendimientos
-        </Button>
+        </Link>
       </div>
     );
   }

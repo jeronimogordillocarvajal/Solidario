@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -337,9 +337,14 @@ export function PerfilForm({
       {ok ? <p className="text-sm text-primary">Perfil guardado.</p> : null}
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button type="submit">Guardar perfil</Button>
-        <Button variant="outline" render={<a href={`/e/${codigo}`} target="_blank" rel="noreferrer" />}>
+        <a
+          href={`/e/${codigo}`}
+          target="_blank"
+          rel="noreferrer"
+          className={buttonVariants({ variant: "outline" })}
+        >
           Ver en la tienda
-        </Button>
+        </a>
       </div>
     </form>
   );
